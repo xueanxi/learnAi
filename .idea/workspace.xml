@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01e68791-d64a-488b-bc10-ed4ce7a2e43e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b/npTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/b/np1_mat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b/npTest2.py" beforeDir="false" afterPath="$PROJECT_DIR$/b/np2_matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b/npTest3.py" beforeDir="false" afterPath="$PROJECT_DIR$/b/np3_linalg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b/npTest4.py" beforeDir="false" afterPath="$PROJECT_DIR$/b/np4_random.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b/np3_linalg.py" beforeDir="false" afterPath="$PROJECT_DIR$/b/np3_linalg.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,8 +83,8 @@
       <file leaf-file-name="np3_linalg.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/b/np3_linalg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="184">
+              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -407,8 +403,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/b/np3_linalg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        <state relative-caret-position="184">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
