@@ -7,27 +7,24 @@
 import os
 from os.path import dirname, abspath
 import sys
+import numpy as np
 from numpy import *
+
+# 文件操作 文件数据转化为矩阵
 
 
 def file2matrix(path, delimater):
-    recordlist = []
     fp = open(path, 'rb')
     content = fp.read()
     fp.close()
     rowList = content.splitlines()  # 按行转换为一维表
     # 逐行遍历，结果按照分隔符分成行向量
-    # for data in rowList:
-    #     for row in data:
-    #         print('row:', row)
-
-    # recordlist = [map(eval, row.split(delimater))
-    #        ]
+    l = []
     for row in rowList:
-        # newdata = eval(str(row).split(delimater))
-        # print('s:', newdata)
-        recordlist.insert(row)
-
+        line = row.decode(encoding='utf-8')
+        newdata = line.split('.')
+        l.append(newdata)
+    recordlist = np.mat(l)
     return recordlist
 
 path = dirname(abspath(__file__))
@@ -38,5 +35,6 @@ for path in pathlist:
     if isinstance(path, str):
         if path.endswith('.txt'):
             filePath = rootdata + os.sep + path
-            print('file:', filePath)
-            recordmat = file2matrix(filePath, "\t")
+            # print('file:', filePath)
+            recordmat = file2matrix2(filePath, ".")
+            print(path, ':\n', recordmat)

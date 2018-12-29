@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://www.cnblogs.com/revo/p/7381101.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+<title>Python面向对象静态方法，类方法，属性方法 - _revolution - 博客园</title>
+<meta property="og:description" content="属性： 公有属性 （属于类，每个类一份） 普通属性 （属于对象，每个对象一份） 私有属性 （属于对象，跟普通属性相似，只是不能通过对象直接访问） 方法：（按作用） 构造方法 析构函数 方法：（按类型）">
+<link type="text/css" rel="stylesheet" href="./a_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./a_files/bundle-CodingLife.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./a_files/bundle-CodingLife-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/revo/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/revo/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/revo/wlwmanifest.xml">
+<script src="./a_files/f.txt"></script><script src="./a_files/amp4ads-host-v0.js"></script><script src="./a_files/pubads_impl_rendering_285.js"></script><script async="" src="./a_files/analytics.js"></script><script type="text/javascript" src="./a_files/encoder.js"></script><script src="./a_files/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'revo', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./a_files/blog-common.js" type="text/javascript"></script>
+<link rel="preload" href="./a_files/f(1).txt" as="script"><script type="text/javascript" src="./a_files/f(1).txt"></script><script src="./a_files/pubads_impl_285.js" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-31/html/container.html"></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/revo/"><img id="blogLogo" src="./a_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/revo/">有的事，必须自己去领悟~</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/revo/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/_revolution">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/revo/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/revo/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 85&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 3</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/revo/p/7381101.html">Python面向对象静态方法，类方法，属性方法</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>属性：</p>
+<p>　　公有属性 &nbsp;（属于类，每个类一份）</p>
+<p>　　普通属性 &nbsp;（属于对象，每个对象一份）</p>
+<p>　　私有属性 &nbsp; &nbsp;（属于对象，跟普通属性相似，只是不能通过对象直接访问）&nbsp;</p>
+<p>方法：（按作用）</p>
+<p>　　构造方法</p>
+<p>　　析构函数</p>
+<p>方法：（按类型）</p>
+<p>　　普通方法</p>
+<p>　　私有方法（方法前面加两个下划线）</p>
+<p><span style="color: #ff0000">　　<span style="color: #000000">静态方法</span></span></p>
+<p><span style="color: #000000">　　类方法</span></p>
+<p><span style="color: #000000">　　属性方法</span></p>
+<h1><span style="color: #000000">静态方法</span></h1>
+<p>@staticmethod<br>静态方法，通过类直接调用，不需要创建对象，不会隐式传递self</p>
+<h1>类方法</h1>
+<p>@classmethod<br>类方法，方法中的self是类本身，调用方法时传的值也必须是类的公有属性，<br>就是说类方法只能操作类本身的公有字段</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff">class</span><span style="color: #000000"> Dog(object):
+    food </span>= <span style="color: #800000">"</span><span style="color: #800000">gutou</span><span style="color: #800000">"</span><span style="color: #000000">
+    age </span>= <span style="color: #800000">"</span><span style="color: #800000">1</span><span style="color: #800000">"</span>
+    <span style="color: #0000ff">def</span> <span style="color: #800080">__init__</span><span style="color: #000000">(self, name):
+        self.NAME </span>=<span style="color: #000000"> name
+    @classmethod
+    </span><span style="color: #0000ff">def</span> eat(self,age): <span style="color: #008000">#</span><span style="color: #008000">只能是类中的变量</span>
+        <span style="color: #008000">#</span><span style="color: #008000"> print(self.NAME)</span>
+        <span style="color: #0000ff">print</span><span style="color: #000000">(age)
+        </span><span style="color: #0000ff">print</span><span style="color: #000000">(self.food)
+
+    @classmethod
+    </span><span style="color: #0000ff">def</span> eat1(self, age):  <span style="color: #008000">#</span><span style="color: #008000"> 只能是类中的变量</span>
+        <span style="color: #008000">#</span><span style="color: #008000"> print(self.NAME)</span>
+        age = <span style="color: #800000">"</span><span style="color: #800000">2</span><span style="color: #800000">"</span><span style="color: #000000">
+        self.food </span>= <span style="color: #800000">"</span><span style="color: #800000">tang</span><span style="color: #800000">"</span><span style="color: #000000">
+    @staticmethod
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> print_1():
+        </span><span style="color: #0000ff">print</span><span style="color: #000000">(Dog.food, Dog.age)
+
+d </span>= Dog(<span style="color: #800000">"</span><span style="color: #800000">labuladuo</span><span style="color: #800000">"</span><span style="color: #000000">)
+d.eat(Dog.age)    </span><span style="color: #008000">#</span><span style="color: #008000">通过对象调用</span>
+Dog.eat(Dog.age)  <span style="color: #008000">#</span><span style="color: #008000">通过类调用</span>
+<span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">-----1-----</span><span style="color: #800000">"</span><span style="color: #000000">)
+d.eat1(Dog.age)
+Dog.print_1()
+</span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">--------2-------</span><span style="color: #800000">"</span><span style="color: #000000">)
+Dog.eat1(Dog.age)
+Dog.print_1()</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<h1>属性方法</h1>
+<p>属性变为私有属性，加断言</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff">class</span><span style="color: #000000"> Cycle(object):
+    </span><span style="color: #0000ff">def</span> <span style="color: #800080">__init__</span><span style="color: #000000">(self,x,y,radius):
+        self.x </span>=<span style="color: #000000"> x
+        self.y </span>=<span style="color: #000000"> y
+        self.radius </span>=<span style="color: #000000"> radius
+    @property
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> radius(self):
+        </span><span style="color: #0000ff">return</span> self.<span style="color: #800080">__radius</span><span style="color: #000000">
+    @radius.setter
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> radius(self,radius):
+        </span><span style="color: #0000ff">assert</span> radius &gt; 0, <span style="color: #800000">"</span><span style="color: #800000">radius must be nonzero and non-negative</span><span style="color: #800000">"</span><span style="color: #000000">
+        self.</span><span style="color: #800080">__radius</span> =<span style="color: #000000"> radius
+    @radius.deleter
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> radius(self):
+        </span><span style="color: #0000ff">del</span> self.<span style="color: #800080">__radius</span>
+    <span style="color: #0000ff">def</span> <span style="color: #800080">__str__</span><span style="color: #000000">(self):
+        </span><span style="color: #0000ff">return</span> <span style="color: #800000">"</span><span style="color: #800000">({0},{1},{2})</span><span style="color: #800000">"</span><span style="color: #000000">.format(self.x,self.y,self.radius)
+
+c </span>= Cycle(1,1,7<span style="color: #000000">)
+c.radius </span>= 9
+<span style="color: #0000ff">print</span><span style="color: #000000">(c)
+</span><span style="color: #0000ff">del</span><span style="color: #000000"> c.radius
+</span><span style="color: #0000ff">print</span><span style="color: #000000">(c.radius)
+</span><span style="color: #008000">#</span><span style="color: #008000">(1,1,9)</span><span style="color: #008000">
+#</span><span style="color: #008000">AttributeError: 'Cycle' object has no attribute '_Cycle__radius'</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>&nbsp;</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff">class</span><span style="color: #000000"> Dog(object):
+    </span><span style="color: #0000ff">def</span> <span style="color: #800080">__init__</span><span style="color: #000000">(self, name):
+        self.name </span>=<span style="color: #000000"> name
+        self.</span><span style="color: #800080">__food</span> =<span style="color: #000000"> None
+    </span><span style="color: #008000">#</span><span style="color: #008000"> def eat(self, food):原始方式</span>
+    <span style="color: #008000">#</span><span style="color: #008000">     self.__food = food</span>
+    <span style="color: #008000">#</span><span style="color: #008000">     print('%s eat %s' %(self.name, food))</span>
+<span style="color: #000000">    @property
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> eat(self):
+        </span><span style="color: #0000ff">print</span>(<span style="color: #800000">'</span><span style="color: #800000">%s eat %s</span><span style="color: #800000">'</span> %(self.name,self.<span style="color: #800080">__food</span><span style="color: #000000">))
+    @eat.setter
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> eat(self, food):
+        self.</span><span style="color: #800080">__food</span> =<span style="color: #000000"> food
+    @eat.deleter
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> eat(self):
+        </span><span style="color: #0000ff">del</span> self.<span style="color: #800080">__food</span>
+        <span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">删完了</span><span style="color: #800000">"</span><span style="color: #000000">)
+
+
+d </span>= Dog(<span style="color: #800000">"</span><span style="color: #800000">labuladuo</span><span style="color: #800000">"</span><span style="color: #000000">)
+</span><span style="color: #008000">#</span><span style="color: #008000"> d.eat("baozi") #原始方式</span>
+<span style="color: #000000">d.eat
+d.eat </span>= <span style="color: #800000">"</span><span style="color: #800000">baozi</span><span style="color: #800000">"</span><span style="color: #000000">
+d.eat  </span><span style="color: #008000">#</span><span style="color: #008000">调用方式没变，只是改变传入的参数就改变了结果</span><span style="color: #008000">
+#</span><span style="color: #008000">可以删除__food属性</span>
+
+<span style="color: #0000ff">del</span><span style="color: #000000"> d.eat
+d.eat  </span><span style="color: #008000">#</span><span style="color: #008000"> 报错</span>
+
+<span style="color: #800000">'''</span><span style="color: #800000">输出
+labuladuo eat None
+labuladuo eat baozi
+删完了
+AttributeError: 'Dog' object has no attribute '_Dog__food'
+</span><span style="color: #800000">'''</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>属性方法应用场景</p>
+<p>好吧，把一个方法变成静态属性有什么卵用呢？既然想要静态变量，那直接定义成一个静态变量不就得了么？well, 以后你会需到很多场景是不能简单通过 定义 静态属性来实现的， 比如 ，你想知道一个航班当前的状态，是到达了、延迟了、取消了、还是已经飞走了， 想知道这种状态你必须经历以下几步:</p>
+<p>1. 连接航空公司API查询</p>
+<p>2. 对查询结果进行解析&nbsp;</p>
+<p>3. 返回结果给你的用户</p>
+<p>因此这个status属性的值是一系列动作后才得到的结果，所以你每次调用时，其实它都要经过一系列的动作才返回你结果，但这些动作过程不需要用户关心， 用户只需要调用这个属性就可以，明白 了么？</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff">class</span><span style="color: #000000"> Flight(object):
+    </span><span style="color: #0000ff">def</span> <span style="color: #800080">__init__</span><span style="color: #000000">(self,name):
+        self.flight_name </span>=<span style="color: #000000"> name
+
+
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> checking_status(self):
+        </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">checking flight %s status </span><span style="color: #800000">"</span> %<span style="color: #000000"> self.flight_name)
+        </span><span style="color: #0000ff">return</span>  1<span style="color: #000000">
+
+    @property
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> flight_status(self):
+        status </span>=<span style="color: #000000"> self.checking_status()
+        </span><span style="color: #0000ff">if</span> status ==<span style="color: #000000"> 0 :
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">flight got canceled...</span><span style="color: #800000">"</span><span style="color: #000000">)
+        </span><span style="color: #0000ff">elif</span> status == 1<span style="color: #000000"> :
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">flight is arrived...</span><span style="color: #800000">"</span><span style="color: #000000">)
+        </span><span style="color: #0000ff">elif</span> status == 2<span style="color: #000000">:
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">flight has departured already...</span><span style="color: #800000">"</span><span style="color: #000000">)
+        </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">cannot confirm the flight status...,please check later</span><span style="color: #800000">"</span><span style="color: #000000">)
+
+
+f </span>= Flight(<span style="color: #800000">"</span><span style="color: #800000">CA980</span><span style="color: #800000">"</span><span style="color: #000000">)
+f.flight_status</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>cool , 那现在我只能查询航班状态， 既然这个flight_status已经是个属性了， 那我能否给它赋值呢？试试吧</p>
+<div class="cnblogs_code">
+<pre>f = Flight(<span style="color: #800000">"</span><span style="color: #800000">CA980</span><span style="color: #800000">"</span><span style="color: #000000">)
+f.flight_status
+f.flight_status </span>=  2</pre>
+</div>
+<p>输出， 说不能更改这个属性，我擦。。。。，怎么办怎么办。。。</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #000000">checking flight CA980 status
+flight </span><span style="color: #0000ff">is</span><span style="color: #000000"> arrived...
+Traceback (most recent call last):
+  File </span><span style="color: #800000">"</span><span style="color: #800000">/Users/jieli/PycharmProjects/python基础/自动化day7面向对象高级/属性方法.py</span><span style="color: #800000">"</span>, line 58, <span style="color: #0000ff">in</span> &lt;module&gt;<span style="color: #000000">
+    f.flight_status </span>=  2<span style="color: #000000">
+AttributeError: can</span><span style="color: #800000">'</span><span style="color: #800000">t set attribute</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./a_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>当然可以改， 不过需要通过@proerty.setter装饰器再装饰一下，此时 你需要写一个新方法， 对这个flight_status进行更改。</p>
+<div class="cnblogs_code"><img id="code_img_closed_1fb7cce4-c8b1-4977-8239-0856d3c9ea52" class="code_img_closed" src="./a_files/ContractedBlock.gif" alt=""><img id="code_img_opened_1fb7cce4-c8b1-4977-8239-0856d3c9ea52" class="code_img_opened" style="display: none" src="./a_files/ExpandedBlockStart.gif" alt="">
+<div id="cnblogs_code_open_1fb7cce4-c8b1-4977-8239-0856d3c9ea52" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff">class</span><span style="color: #000000"> Flight(object):
+    </span><span style="color: #0000ff">def</span> <span style="color: #800080">__init__</span><span style="color: #000000">(self,name):
+        self.flight_name </span>=<span style="color: #000000"> name
+
+
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> checking_status(self):
+        </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">checking flight %s status </span><span style="color: #800000">"</span> %<span style="color: #000000"> self.flight_name)
+        </span><span style="color: #0000ff">return</span>  1<span style="color: #000000">
+
+
+    @property
+    </span><span style="color: #0000ff">def</span><span style="color: #000000"> flight_status(self):
+        status </span>=<span style="color: #000000"> self.checking_status()
+        </span><span style="color: #0000ff">if</span> status ==<span style="color: #000000"> 0 :
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">flight got canceled...</span><span style="color: #800000">"</span><span style="color: #000000">)
+        </span><span style="color: #0000ff">elif</span> status == 1<span style="color: #000000"> :
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">flight is arrived...</span><span style="color: #800000">"</span><span style="color: #000000">)
+        </span><span style="color: #0000ff">elif</span> status == 2<span style="color: #000000">:
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">flight has departured already...</span><span style="color: #800000">"</span><span style="color: #000000">)
+        </span><span style="color: #0000ff">else</span><span style="color: #000000">:
+            </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">cannot confirm the flight status...,please check later</span><span style="color: #800000">"</span><span style="color: #000000">)
+    
+    @flight_status.setter </span><span style="color: #008000">#</span><span style="color: #008000">修改</span>
+    <span style="color: #0000ff">def</span><span style="color: #000000"> flight_status(self,status):
+        status_dic </span>=<span style="color: #000000"> {
+            0 : </span><span style="color: #800000">"</span><span style="color: #800000">canceled</span><span style="color: #800000">"</span><span style="color: #000000">,
+            </span>1 :<span style="color: #800000">"</span><span style="color: #800000">arrived</span><span style="color: #800000">"</span><span style="color: #000000">,
+            </span>2 : <span style="color: #800000">"</span><span style="color: #800000">departured</span><span style="color: #800000">"</span><span style="color: #000000">
+        }
+        </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">\033[31;1mHas changed the flight status to \033[0m</span><span style="color: #800000">"</span><span style="color: #000000">,status_dic.get(status) )
+
+    @flight_status.deleter  </span><span style="color: #008000">#</span><span style="color: #008000">删除</span>
+    <span style="color: #0000ff">def</span><span style="color: #000000"> flight_status(self):
+        </span><span style="color: #0000ff">print</span>(<span style="color: #800000">"</span><span style="color: #800000">status got removed...</span><span style="color: #800000">"</span><span style="color: #000000">)
+
+f </span>= Flight(<span style="color: #800000">"</span><span style="color: #800000">CA980</span><span style="color: #800000">"</span><span style="color: #000000">)
+f.flight_status
+f.flight_status </span>=  2 <span style="color: #008000">#</span><span style="color: #008000">触发@flight_status.setter </span>
+<span style="color: #0000ff">del</span> f.flight_status <span style="color: #008000">#</span><span style="color: #008000">触发@flight_status.deleter </span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/revo/category/1044184.html" target="_blank">Python_development</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(7381101,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;fde99bc8-75ef-4d21-08ab-08d49c352df3&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./a_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./a_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/revo/" target="_blank"><img src="./a_files/20170705111032.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/revo/">_revolution</a><br>
+            <a href="http://home.cnblogs.com/u/revo/followees">关注 - 0</a><br>
+            <a href="http://home.cnblogs.com/u/revo/followers">粉丝 - 4</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;fde99bc8-75ef-4d21-08ab-08d49c352df3&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(7381101,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">2</span>
+    </div>
+    <div class="buryit" onclick="votePost(7381101,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/revo/p/7374132.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/revo/p/7374132.html" title="发布于2017-08-16 16:38">Python面向对象一些阶段性总结</a><br><a href="https://www.cnblogs.com/revo/p/7398191.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/revo/p/7398191.html" title="发布于2017-08-19 22:34">Python面向对象类的特殊成员方法</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2017-08-17 13:29</span> <a href="https://www.cnblogs.com/revo/">_revolution</a> 阅读(<span id="post_view_count">9755</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=7381101" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/revo/p/7381101.html#" onclick="AddToWz(7381101);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=365153,cb_entryId=7381101,cb_blogApp=currentBlogApp,cb_blogUserGuid='fde99bc8-75ef-4d21-08ab-08d49c352df3',cb_entryCreatedDate='2017/8/17 13:29:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/revo/p/7381101.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/revo/p/7381101.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="http://clickc.admaster.com.cn/c/a116493,b2949399,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-会员节&#39;)">【活动】华为云12.12会员节 云产品1折起 满额送Mate20 点击抢购</a><br><a href="https://cloud.tencent.com/act/southwest?fromSource=gwzcw.2017844.2017844.2017844" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【推荐】服务器100%基准CPU性能，1核1G首年168元，限时特惠！</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/act/special/amd?fromSource=gwzcw.1351353.1351353.1351353" target="_blank"><img width="300" height="250" src="./a_files/24442-20181129113406214-695115565.jpg" alt="腾讯云1129" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/iexperience/p/9198651.html" target="_blank" onclick="clickRecomItmem(9198651,&#39;icPHkz1YlJNurh9w3BkqUj0vNPu4dHusIG88oc4XJN/+ypuxxoPCsuqXTY1L02DAolC+f0hi1qo2ZjQLCrkCF+aoIWstIYRn5bYoLUjNbpkF+TSggZGLT53+mMZbTCkTL49TAUcWbP4xZayO&#39;)">python 面向对象静态方法、类方法、属性方法、类的特殊成员方法</a><br>·  <a href="https://www.cnblogs.com/progor/p/8419606.html" target="_blank" onclick="clickRecomItmem(8419606,&#39;tOpHbdo5YPlRJcb/wbp1udv6RGtzcm0mByHnnSGVaUIgCR7XJbEbOPVFppC/Mho5aE12RYImpwor09tHcFLRoROxO10WwRViLSsnMjzLhCRrJjgod+WegrgDCnAQVSBuplIz1oKLgjrK4Qlc&#39;)">9.1.面向对象：静态方法、类方法、属性方法</a><br>·  <a href="https://www.cnblogs.com/rainowl-ymj/p/7200738.html" target="_blank" onclick="clickRecomItmem(7200738,&#39;dg90aWjgZ3ELZ4LMrN8CSYvUmmz4/IdqfDmr79hThO1zRv1NKARMx2a+NjMiGyVTdF2+H4pNwR+2QYg2OGIzRBFBR9UyijoLgDr9vbT8eFLLcHyaQbm8n8Ddd5HZJjnjYbC4shGmB3attr54&#39;)">Python 3.x--面向对象编程（二）静态方法、类方法、属性方法</a><br>·  <a href="https://www.cnblogs.com/gaoya666/p/8324850.html" target="_blank" onclick="clickRecomItmem(8324850,&#39;6LUVlsCAxMDQ3ewZ0iylwofw1hOWbHfR9AaRRMSd3/HwzXA/cG53VNjk+Fm64rZfDufEhsksi+HVDqtkVQUw6Ij8Fgo8KTZfZWZ3ctaX8ldz6R1F4/cuCITwj4O4ITcwDXAoNgRvMHcIzz4U&#39;)">面向对象property属性、静态方法和类方法</a><br>·  <a href="https://www.cnblogs.com/haoqirui/p/10040959.html" target="_blank" onclick="clickRecomItmem(10040959,&#39;TlnuSOFxBrT3fEmJyhTZl5jMshuDUS51uvyI3PsfcKZVss8MYQ9ZhBt0HVNyv54Gq8FJ1goMZKffsBNkFmCxn0UqK7lwBFD0TocSxW/SWMuikunDJ6NLZ9QMUhWPTR7BuqNah/99LNTa1x/+&#39;)">Python面向对象之静态方法和类方法</a><br></div></div>
+<script async="async" src="./a_files/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CIPn74boxN8CFUiDvAodRWUENA">
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true" src="./a_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>热门推荐：</b><br>·  <a href="https://www.cnblogs.com/yuleitest/p/7271544.html" target="_blank" onclick="clickRecomItmemHot(7271544,&#39;TcAtlAf3S5RjwtL4Dhzdt4yuWOJvTRIfYp7c6aDUGqYYCwiWHfUqJ1YtakiaZQ7tqferSwDXz5ZykYcjVaQP+68edxr4/bcOiEft6CASzRQAsxcHb6ostP8nd0jW46fL3zYgte3mMQNPaQ==&#39;)">我去暗网里转了转（慎入）</a><br>·  <a href="https://www.cnblogs.com/shiguangliangchunshanbo/p/9131743.html" target="_blank" onclick="clickRecomItmemHot(9131743,&#39;99aiYMbJj9aqVKJYdxbsY4lLbUqD8Hr9vyrRRzpQGaa7CqtyM6V5ijf27FkHZfcLignVOv0yj6f1pH4ukO0oG2iUblMuhEsqrLmNosJMVrA7YGyuzvYeznbEcO8OOBc/wW0diECDhpbVhQ==&#39;)">如何进入暗网（技术交流）</a><br>·  <a href="https://www.cnblogs.com/anquanniu/p/9447818.html" target="_blank" onclick="clickRecomItmemHot(9447818,&#39;pfZO9IEIq+tzJ846upzPcfDH+xhUDoY3KIaxSpGAETB882pvnzs4kLZNEf2xylp8w6ksiIIGvFX52GfLDgkIcdaYl1RkkQxODPLzppUsSEnnfZkISXeVkqMhCsZX6bl5afVtViiY1lTXlg==&#39;)">“暗网”真的如传言般可怕吗？这是一份《暗网指南》</a><br>·  <a href="https://www.cnblogs.com/x-poior/p/6868345.html" target="_blank" onclick="clickRecomItmemHot(6868345,&#39;492axMf2vS9xAfnyUvl7eDvSYJVxNlMZ5ksR+rUkhBP5qo33+Dhdv+tfeNZjFCd4H/JA8dhrsOZ26nk1sLhsvrIt7vzIsCtxfwGuVEZZUvG0tPWPy97SmG3o/Hgb7T4yCXzwTuCbaDNnng==&#39;)">【wannacry病毒之暗网】-如何访问"暗网"（慎入）</a><br>·  <a href="https://www.cnblogs.com/whw19818/p/6346805.html" target="_blank" onclick="clickRecomItmemHot(6346805,&#39;FO7cD2HQRTf9h0dEFj5g4OlvO4QcjALOWryCX30uZaf0x5+faB2HJi4yMcrvxOQplGGNZzyisnpN2ixfeLC/SJRfLtm9LTMtgolwVJXOZGZZy7ReezBYBYyRhJiAayUSC4u3FHAwrR6rbA==&#39;)">如果看了此文你还不懂傅里叶变换，那就过来掐死我吧【完整版】</a><br></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/revo/">_revolution</a><br>园龄：<a href="https://home.cnblogs.com/u/revo/" title="入园时间：2017-07-05">1年5个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/revo/followers/">4</a><br>关注：<a href="https://home.cnblogs.com/u/revo/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;fde99bc8-75ef-4d21-08ab-08d49c352df3&#39;)">+加关注</a></div><script>getFollowStatus('fde99bc8-75ef-4d21-08ab-08d49c352df3')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/11/01&#39;);return false;">&lt;</a></td><td align="center">2018年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/01/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalWeekendDay" align="center">1</td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td class="CalWeekendDay" align="center">15</td></tr><tr><td class="CalWeekendDay" align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalWeekendDay" align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td class="CalTodayDay" align="center">29</td></tr><tr><td class="CalWeekendDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/revo/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/revo/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/revo/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/revo/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/revo/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block"></div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/revo/category/1111097.html">database(20)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/revo/category/1044187.html">Linux_operation(33)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/revo/category/1062603.html">network</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/revo/category/1067599.html">oop_thinking(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/revo/category/1044184.html">Python_development(23)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/revo/category/1071846.html">software_test(5)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="https://www.cnblogs.com/revo/archive/2018/11.html">2018年11月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="https://www.cnblogs.com/revo/archive/2018/10.html">2018年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="https://www.cnblogs.com/revo/archive/2018/08.html">2018年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="https://www.cnblogs.com/revo/archive/2018/07.html">2018年7月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="https://www.cnblogs.com/revo/archive/2018/05.html">2018年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="https://www.cnblogs.com/revo/archive/2018/04.html">2018年4月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="https://www.cnblogs.com/revo/archive/2018/03.html">2018年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="https://www.cnblogs.com/revo/archive/2018/02.html">2018年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="https://www.cnblogs.com/revo/archive/2018/01.html">2018年1月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="https://www.cnblogs.com/revo/archive/2017/12.html">2017年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="https://www.cnblogs.com/revo/archive/2017/11.html">2017年11月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="https://www.cnblogs.com/revo/archive/2017/10.html">2017年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="https://www.cnblogs.com/revo/archive/2017/09.html">2017年9月 (13)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="https://www.cnblogs.com/revo/archive/2017/08.html">2017年8月 (33)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="https://www.cnblogs.com/revo/archive/2017/07.html">2017年7月 (11)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/revo/p/7699175.html#4142232">1. Re:oop设计模式抽象总结</a></li>
+        <li class="recent_comment_body">我佛了</li>
+        <li class="recent_comment_author">--Kkky</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/revo/p/9495988.html#4112213">2. Re:DB2表空间</a></li>
+        <li class="recent_comment_body">(7) 数据库错误 SQL1585N A system temporary table space with sufficient page size does not exist. SQLSTA........</li>
+        <li class="recent_comment_author">--Captain灬</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/revo/p/7699175.html#4042142">3. Re:oop设计模式抽象总结</a></li>
+        <li class="recent_comment_body">这是我见过，画的最丑也是最详细的灵魂画师</li>
+        <li class="recent_comment_author">--mhh4399</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/revo/p/7381101.html">1. Python面向对象静态方法，类方法，属性方法(9755)</a></li><li><a href="https://www.cnblogs.com/revo/p/7471663.html">2. Linux有几种安装软件的方式？？？？？(4835)</a></li><li><a href="https://www.cnblogs.com/revo/p/7357170.html">3. Python，subprocess模块（补充）(2865)</a></li><li><a href="https://www.cnblogs.com/revo/p/7444897.html">4. Linux：FTP服务匿名用户，本地用户，虚拟用户配置(2101)</a></li><li><a href="https://www.cnblogs.com/revo/p/7444436.html">5. Linux查看Port状态命令、密钥SSH、会话同步(1649)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/revo/p/7699175.html">1. oop设计模式抽象总结(2)</a></li><li><a href="https://www.cnblogs.com/revo/p/9495988.html">2. DB2表空间(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/revo/p/7381101.html">1. Python面向对象静态方法，类方法，属性方法(2)</a></li><li><a href="https://www.cnblogs.com/revo/p/7444897.html">2. Linux：FTP服务匿名用户，本地用户，虚拟用户配置(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 _revolution
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe id="google_osd_static_frame_6012896015186" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./a_files/saved_resource(1).html"></iframe></body></html>
