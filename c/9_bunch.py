@@ -41,17 +41,16 @@ for segDir in os.listdir(corpusSegPath):
         content = ''.join(content.split())
 
         bunch.filenames.append(fullName)
-        bunch.lable.append(segDirPath)
+        bunch.lable.append(segDir)
         bunch.contents.append(content)
 
-# print(bunch)
+# bunch is a object, so it need to be saved in byte format.
 fileToSave = open(bagFile, 'wb')
 pickle.dump(bunch, fileToSave)
 fileToSave.close()
 
-print('================================')
-
-
+# load in byte format too.
 fileToOpen = open(bagFile, 'rb')
 bunch2 = pickle.load(fileToOpen)
+fileToOpen.close()
 print(bunch2)

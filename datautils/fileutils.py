@@ -6,6 +6,16 @@
 # @Link    : ${link}
 # @Version : $Id$
 
+import os
+from os.path import dirname, abspath
+import pickle
+
+
+def getDataPath():
+    path = dirname(abspath(__file__))
+    parentpath = dirname(abspath(path))
+    return parentpath + os.sep + 'rootdata'
+
 
 def saveFile(filePath, content):
     """
@@ -39,3 +49,19 @@ def readFileB(filePath):
     with open(filePath, 'rb') as file:
         content = file.read()
         return content
+
+
+def saveBatchObj(filePath, obj):
+    """
+    doc:save batch obj.
+    """
+    with open(filePath, 'wb') as file:
+        file.write(filePath, 'wb')
+
+
+def readBatchObj(filePath):
+    """
+    doc:save batch obj.
+    """
+    with open(filePath, 'rb') as file:
+        return pickle.load(file)
