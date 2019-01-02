@@ -9,18 +9,7 @@ import sys
 sys.path.append('..')
 import jieba
 import shutil
-from datautils import rootdatas
-
-
-def saveFile(filePath, content):
-    with open(filePath, 'wb') as file:
-        file.write(content.encode(encoding='utf-8'))
-
-
-def readFile(filePath):
-    with open(filePath, 'rb') as file:
-        content = file.read()
-        return content
+from datautils import rootdatas, fileutils
 
 # 把分词语料库的文件全部进行分词
 
@@ -40,9 +29,8 @@ for rawDir in os.listdir(corpus_raw):
         shutil.rmtree(segDirPath)
         os.makedirs(segDirPath)
     for rawFile in os.listdir(rawDirPath):
-        content = readFile(rawDirPath + os.sep +
-                           rawFile).strip().decode(encoding='utf-8')
+        content = fileutils.readFile(rawDirPath + os.sep + rawFile)
         content = ''.join(content.split())
         seg = jieba.cut(content, cut_all=False)
         segFile = segDirPath + os.sep + rawFile
-        saveFile(segFile, ' '.join(seg))
+        fileutils.saveFile(segFile, ' '.join(seg))

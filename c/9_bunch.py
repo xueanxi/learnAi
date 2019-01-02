@@ -11,56 +11,47 @@ import sys
 sys.path.append('..')
 import jieba
 import shutil
-from datautils import rootdatas
+from datautils import rootdatas, fileutils
 from sklearn.datasets.base import Bunch
 import pickle
 
-
-def saveFile(filePath, content):
-    with open(filePath, 'wb') as file:
-        file.write(content.encode(encoding='utf-8'))
-
-
-def readFile(filePath):
-    with open(filePath, 'rb') as file:
-        content = file.read()
-        return content
-
-
-bag_file = 'train_set.dat'
 rootPath = rootdatas.getDataPath() + os.sep
-corpus_seg = rootPath + 'train_corpus_small'
-train_word_bag_path = rootPath + os.sep + 'train_word_bag'
-if not os.path.exists(train_word_bag_path):
-    os.mkdir(train_word_bag_path)
+bagPath = rootPath + 'train_word_bag'
+bagFileName = 'train_set.dat'
+bagFile = bagPath + os.sep + bagFileName
+corpusSegPath = rootPath + 'train_corpus_seg'
 
-if os.path.exists(train_word_bag_path + os.sep + bag_file):
-    os.remove(train_word_bag_path + os.sep + bag_file)
+if not os.path.exists(bagPath):
+    os.mkdir(bagPath)
+
+if os.path.exists(bagFile):
+    os.remove(bagFile)
+    print(bagFile, ' exist, so delete it.')
 
 print(Bunch)
 bunch = Bunch(target_name=[], lable=[], filenames=[], contents=[])
-bunch.target_name = corpus_seg
+bunch.target_name = corpusSegPath
 
-for segDir in os.listdir(corpus_seg):
-    segDirPath = corpus_seg + os.sep + segDir
+for segDir in os.listdir(corpusSegPath):
+    segDirPath = corpusSegPath + os.sep + segDir
 
     for segFile in os.listdir(segDirPath):
         fullName = segDirPath + os.sep + segFile
-        content = readFile(fullName).decode(encoding='utf-8').strip()
+        content = fileutils.readFile(fullName).strip()
         content = ''.join(content.split())
 
         bunch.filenames.append(fullName)
         bunch.lable.append(segDirPath)
         bunch.contents.append(content)
 
-print(bunch)
-fileToSave = open(train_word_bag_path + os.sep + bag_file, 'wb')
+# print(bunch)
+fileToSave = open(bagFile, 'wb')
 pickle.dump(bunch, fileToSave)
 fileToSave.close()
 
 print('================================')
 
 
-fileToOpen = open(train_word_bag_path + os.sep + bag_file, 'rb')
+fileToOpen = open(bagFile, 'rb')
 bunch2 = pickle.load(fileToOpen)
 print(bunch2)

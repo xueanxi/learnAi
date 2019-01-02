@@ -6,15 +6,6 @@
 # @Link    : ${link}
 # @Version : $Id$
 
-import os
-from os.path import dirname, abspath
-
-
-def getDataPath():
-    path = dirname(abspath(__file__))
-    parentpath = dirname(abspath(path))
-    return parentpath + os.sep + 'rootdata'
-
 
 def saveFile(filePath, content):
     """
