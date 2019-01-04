@@ -31,7 +31,7 @@ stopWordList = stopWordFile.read().splitlines()
 # print('stopWordList,', stopWordList)
 stopWordFile.close()
 
-# 2.build TF-IDF vector space
+# 3.build TF-IDF vector space
 tfidfSpace = Bunch(target_name=trainSet.target_name, lable=trainSet.lable,
                    filenames=trainSet.filenames, tdm=[], vocabulary=[])
 vectorizer = TfidfVectorizer(
