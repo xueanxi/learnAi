@@ -56,7 +56,7 @@ def saveBatchObj(filePath, obj):
     doc:save batch obj.
     """
     with open(filePath, 'wb') as file:
-        file.write(filePath, 'wb')
+        pickle.dump(obj, file)
 
 
 def readBatchObj(filePath):

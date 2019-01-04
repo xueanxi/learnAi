@@ -10,5 +10,6 @@ matrix = np.mat(list)
 
 matrix2 = np.mat(list2)
 
+
 print(matrix)
 print(matrix2.T)

@@ -27,7 +27,8 @@ stopWordFolderPath = rootPath + 'train_corpus_stop_word'
 stopWordFileName = 'corpus_stop_word_china.txt'
 stopWordFilePath = stopWordFolderPath + os.sep + stopWordFileName
 stopWordFile = open(stopWordFilePath, 'r')
-stopWordList = stopWordFile.read()
+stopWordList = stopWordFile.read().splitlines()
+# print('stopWordList,', stopWordList)
 stopWordFile.close()
 
 # 2.build TF-IDF vector space
@@ -38,6 +39,14 @@ vectorizer = TfidfVectorizer(
 transformer = TfidfTransformer()
 
 tfidfSpace.tdm = vectorizer.fit_transform(trainSet.contents)
-tfidfSpace.vocabulary = vectorizer.vocabulary
+# print('tdm:', tfidfSpace.tdm)
+tfidfSpace.vocabulary = vectorizer.vocabulary_
+# print('tfidfSpace:', tfidfSpace)
 
-print('tfidfSpace:', tfidfSpace)
+# 3.save tfidfSpace
+vocabularyFolderPath = rootPath + 'train_word_bag'
+vocabularyFileName = 'tfidfSpace.dat'
+vocabularyPath = vocabularyFolderPath + os.sep + vocabularyFileName
+if os.path.exists(vocabularyPath):
+    os.remove(vocabularyPath)
+fileutils.saveBatchObj(vocabularyPath, tfidfSpace)

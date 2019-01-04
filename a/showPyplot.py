@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 #dataset = [[1,2,3],[4,5,6],[7,8,9]]
 #dataMat = mat(dataset).T
-#plt.scatter(dataMat[0],dataMat[1])
+# plt.scatter(dataMat[0],dataMat[1])
 #print('hello world 你好世界')
 
 # Fixing random state for reproducibility
@@ -30,4 +30,3 @@ theta = np.arange(0, np.pi / 2, 0.01)
 plt.plot(r0 * np.cos(theta), r0 * np.sin(theta))
 
 plt.show()
-
