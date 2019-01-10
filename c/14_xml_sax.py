@@ -12,6 +12,7 @@ from datautils import fileutils
 import pandas as pd
 import numpy as np
 from xml import sax
+import re
 
 
 class MyHandler(sax.ContentHandler):
@@ -25,10 +26,8 @@ class MyHandler(sax.ContentHandler):
    # 元素开始事件处理
     def startElement(self, tag, attributes):
         self.CurrentData = tag
-        if tag == "doc":
-            print("*****doc*****")
 
-   # 元素结束事件处理
+    # 元素结束事件处理
     def endElement(self, tag):
         if self.CurrentData == "url":
             print("end url:", self.url)
@@ -51,8 +50,18 @@ class MyHandler(sax.ContentHandler):
 
 
 root = fileutils.getDataPath() + os.sep
-# filePath = root + 'news' + os.sep + 'news.sohunews.020806.txt'
-filePath = root + 'news' + os.sep + 'test.txt'
+filePath = root + 'news' + os.sep + 'news.sohunews.020806.txt'
+#filePath = root + 'news' + os.sep + 'test.txt'
+
 
 myHandler = MyHandler()
-sax.parse(source=filePath, handler=myHandler)
+
+# 1
+# sax.parse(source=filePath, handler=myHandler)
+
+# 2
+file = open(filePath, 'r')
+text = file.read()
+file.close()
+text = re.sub(u"[\x00-\x08\x0b-\x0c\x0e-\x1f|&]+", u"", text)
+root = sax.parseString(string=text, handler=myHandler)

@@ -19,8 +19,8 @@ except ImportError:
     import xml.etree.ElementTree as ET
 
 root = fileutils.getDataPath() + os.sep
-# filePath = root + 'news' + os.sep + 'news.sohunews.020806.txt'
-filePath = root + 'news' + os.sep + 'test.txt'
+filePath = root + 'news' + os.sep + 'news.sohunews.020806.txt'
+# filePath = root + 'news' + os.sep + 'test.txt'
 
 # 1
 # tree = ET.parse(filePath)  # <class 'xml.etree.ElementTree.ElementTree'>
@@ -30,7 +30,9 @@ filePath = root + 'news' + os.sep + 'test.txt'
 file = open(filePath, 'r')
 text = file.read()
 file.close()
-text = re.sub(u"[\x00-\x08\x0b-\x0c\x0e-\x1f]+", u"", text)
+
+text = re.sub(u"[\x00-\x08\x0b-\x0c\x0e-\x1f|&]+", u"", text)
+# text = re.sub(u"&", u"", text)
 root = ET.fromstring(text)
 
 # 遍历xml文档的第二层

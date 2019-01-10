@@ -30,3 +30,10 @@ from datautils import fileutils
 # saveFile(filePath, 'testtstserslfjsajfajfdas')
 # content = readFile(filePath)
 # print('read content:', content)
+
+s = 'http://house.sohu.com/ bjesf/  sale/84294750.html'
+print('0:', s.replace(' ', ''))
+list = s.split('http://')
+if(len(list) == 2):
+    list = list[1].split('.sohu')
+    print('4:', list[0])
