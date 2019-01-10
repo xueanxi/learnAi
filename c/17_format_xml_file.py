@@ -12,7 +12,8 @@ sys.path.append('..')
 from datautils import fileutils
 
 root = fileutils.getDataPath() + os.sep
-folderPath = root + 'news' + os.sep + "train"
+folderPath = root + 'news' + os.sep + "test"
+# folderPath = root + 'news' + os.sep + "train"
 for file in os.listdir(folderPath):
     filePath = folderPath + os.sep + file
     with open(filePath, 'r+') as fp:

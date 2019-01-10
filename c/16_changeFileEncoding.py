@@ -11,5 +11,6 @@ sys.path.append('..')
 from datautils import fileutils
 
 root = fileutils.getDataPath() + os.sep
-folderPath = root + 'news' + os.sep + "train"
+# folderPath = root + 'news' + os.sep + "train"
+folderPath = root + 'news' + os.sep + "test"
 fileutils.encodeUtf8(folderPath)

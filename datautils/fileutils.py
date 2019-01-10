@@ -56,8 +56,12 @@ def saveBatchObj(filePath, obj):
     """
     doc:save batch obj.
     """
+    if(os.path.exists(filePath)):
+        os.remove(filePath)
+        print('saveBatchObj() remove old file.')
     with open(filePath, 'wb') as file:
         pickle.dump(obj, file)
+        print('saveBatchObj() save to ', filePath)
 
 
 def readBatchObj(filePath):
