@@ -10,6 +10,7 @@ import os
 from os.path import dirname, abspath
 import pickle
 from chardet import detect
+import shutil
 
 
 def getDataPath():
@@ -97,3 +98,7 @@ def encodeUtf8(folderPath, encode="utf8"):
             print('finish :', file)
 
     print('finish all!!!')
+
+
+def removeFolder(filePath):
+    shutil.rmtree(filePath)

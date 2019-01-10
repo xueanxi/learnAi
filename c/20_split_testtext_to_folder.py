@@ -9,6 +9,7 @@ import os
 import sys
 sys.path.append('..')
 from datautils import fileutils
+from sklearn.datasets.base import Bunch
 from xml import sax
 import re
 
@@ -16,6 +17,7 @@ import re
 class MyHandler(sax.ContentHandler):
 
     def __init__(self):
+        self.lables = []
         self.lable = ''
         self.content = ''
         pass
@@ -40,9 +42,9 @@ class MyHandler(sax.ContentHandler):
             if(len(list) == 2):
                 list = list[1].split('.sohu')
                 self.lable = list[0]
-                if list[0] not in self.lable:
-                    self.lable.append(list[0])
-                    folderPath = newsTestPath + os.sep + list[0]
+                if list[0] not in self.lables:
+                    self.lables.append(list[0])
+                    folderPath = newsTestFolder + os.sep + list[0]
                     if not os.path.exists(folderPath):
                         os.mkdir(folderPath)
 
@@ -57,17 +59,24 @@ class MyHandler(sax.ContentHandler):
         self.datas = datas
 
 root = fileutils.getDataPath() + os.sep
-newsTestPath = root + 'news' + os.sep + "test"
-newsTrainPath = root + 'news' + os.sep + "train"
+newsTestFolder = root + 'news' + os.sep + "test"
+newsTrainFolder = root + 'news' + os.sep + "train"
+newsSegFolder = root + 'news' + os.sep + "seg"
+newsTestSegFile = newsSegFolder + os.sep + 'testSpace.dat'
 
 myHandler = MyHandler()
 datas = []
 myHandler.setDatas(datas)
 
+# delete all folder
+for file in os.listdir(newsTestFolder):
+    filePath = newsTestFolder + os.sep + file
+    if os.path.isdir(filePath):
+        fileutils.removeFolder(filePath)
 
 # parser all test news
-for file in os.listdir(newsTrainPath):
-    filePath = newsTrainPath + os.sep + file
+for file in os.listdir(newsTestFolder):
+    filePath = newsTestFolder + os.sep + file
     if os.path.isdir(filePath):
         print(file, ' is dir. continue')
         continue
@@ -76,10 +85,26 @@ for file in os.listdir(newsTrainPath):
         text = re.sub(u"[\x00-\x08\x0b-\x0c\x0e-\x1f|&]+", u"", text)
         root = sax.parseString(string=text, handler=myHandler)
 
+# split test file to folder separately
 for data in datas:
     lable = data.split('xueANxi')[0]
     content = data.split('xueANxi')[1]
-    segFolder = newsTestPath + os.sep + lable
+    segFolder = newsTestFolder + os.sep + lable
     num = len(os.listdir(segFolder))
     filePath = segFolder + os.sep + str(num) + '.txt'
     fileutils.saveFile(filePath, content)
+
+bunch = Bunch(target_name=[], lable=[], filenames=[], contents=[])
+bunch.target_name = newsSegFolder
+
+# save test data to file
+for data in datas:
+    lable = data.split('xueANxi')[0]
+    content = data.split('xueANxi')[1]
+    segFolder = newsTestFolder + os.sep + lable
+    filePath = segFolder + os.sep + str(num) + '.txt'
+    bunch.filenames.append(filePath)
+    bunch.lable.append(lable)
+    bunch.contents.append(content)
+
+fileutils.saveBatchObj(newsTestSegFile, bunch)
