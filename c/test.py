@@ -8,6 +8,7 @@ import jieba
 import shutil
 from datautils import fileutils
 from chardet import detect
+import numpy as np
 
 
 # def saveFile(filePath, content):
@@ -47,3 +48,5 @@ d = dict()
 d['a'] = 'dog'
 del(d['a'])
 print(d)
+
+print('sss = ', np.multiply(7, 2, 4))
