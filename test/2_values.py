@@ -16,8 +16,8 @@ print("""6:第一行
 #打印多行文字 2
 print("7:第一行\n第二行\n第三行")
 
-print('a',end="   ")#end 的使用
-print('b',end= "  \n")
+print('a_pyplot',end="   ")#end 的使用
+print('b_numpy',end= "  \n")
 
 print(r"8: abcdefg \n hijk") # 字符串签名加上 r  可以去掉转义
 

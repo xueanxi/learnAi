@@ -1,6 +1,6 @@
 # reference 引用
 
-list1 = ['a','b','c','d']
+list1 = ['a_pyplot','b_numpy','c','d']
 list2 = list1
 
 del list1[0]
@@ -10,7 +10,7 @@ print("list2 : ",list2)
 
 
 #下面这种就是通过切片的方式，完整复制
-list3 = ['a','b','c','d','e','f']
+list3 = ['a_pyplot','b_numpy','c','d','e','f']
 list4 = list3[:]
 del list3[0]
 

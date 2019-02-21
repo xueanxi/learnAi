@@ -11,7 +11,7 @@ sys.path.append('..')
 from datautils import fileutils
 from lxml import etree, html
 
-# path = rootdatas.getDataPath() + os.sep + "a.html"
+# path = rootdatas.getDataPath() + os.sep + "a_pyplot.html"
 # file = open(path, 'rb')
 # content = file.read()
 # file.close()

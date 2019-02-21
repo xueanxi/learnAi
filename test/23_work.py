@@ -26,10 +26,10 @@ else:
 #使用 zipfile来压缩文件
 zipfiles = zipfile.ZipFile(target,'w')
 if os.path.isdir(source1):
-	print("source1 is a dir")
+	print("source1 is a_pyplot dir")
 	for child in os.listdir(source1):
 		zipfiles.write(child)
 		print("write "+child+" to "+target_dir+" success!")
 	zipfiles.close()
 else:
-	print("sorce1 is not a dir.")
+	print("sorce1 is not a_pyplot dir.")

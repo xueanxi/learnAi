@@ -12,11 +12,11 @@ class person():
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        print("Initialized a person, name is {}, age is {}".format(
+        print("Initialized a_pyplot person, name is {}, age is {}".format(
             self.name, self.age))
 
     def tell(self):
-        print("I am a person, my name is {}, my age is {}".format(
+        print("I am a_pyplot person, my name is {}, my age is {}".format(
             self.name, self.age))
 
 # 子类 老师
@@ -27,10 +27,10 @@ class teacher(person):
     def __init__(self, name, age, salary):
         person.__init__(self, name, age)
         self.salary = salary
-        print("Initialized a teacher, salary:", salary)
+        print("Initialized a_pyplot teacher, salary:", salary)
 
     def tell(self):
-        print("I am a teacher,my name is {}, age is {}, salary is {}".format(
+        print("I am a_pyplot teacher,my name is {}, age is {}, salary is {}".format(
             self.name, self.age, self.salary))
 
 # 子类 学生
@@ -41,7 +41,7 @@ class student(person):
     def __init__(self, name, age, friend):
         person.__init__(self, name, age)
         self.friend = friend
-        print("Initialized a student, i have {} frends".format(friend))
+        print("Initialized a_pyplot student, i have {} frends".format(friend))
 
 
 anxi = teacher('anxi', 25, 60000)

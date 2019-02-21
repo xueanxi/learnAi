@@ -32,8 +32,8 @@ def not_divisible(n):
     return lambda x: x % n > 0
 
 # 不能被 3 整除的数列
-# a = list(filter(not_divisible(3), [1, 2, 3, 4, 5, 6, 7, 8, 9, 100]))
-# print(a)
+# a_pyplot = list(filter(not_divisible(3), [1, 2, 3, 4, 5, 6, 7, 8, 9, 100]))
+# print(a_pyplot)
 
 
 def getPrime():

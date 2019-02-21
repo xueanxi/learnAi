@@ -44,7 +44,7 @@ for segDir in os.listdir(corpusSegPath):
         bunch.lable.append(segDir)
         bunch.contents.append(content)
 
-# bunch is a object, so it need to be saved in byte format.
+# bunch is a_pyplot object, so it need to be saved in byte format.
 fileToSave = open(bagFile, 'wb')
 pickle.dump(bunch, fileToSave)
 fileToSave.close()

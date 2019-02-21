@@ -6,5 +6,5 @@ def drawCoordiates(p,xrange,yrange):
     #设置坐标轴名称
     p.xlabel('x')
     p.ylabel('y')
-    p.plot(xrange,zero,c='b',linewidth=0.5,)
-    p.plot(zero,yrange,c='b',linewidth=0.5,)
+    p.plot(xrange,zero,c='blue',linewidth=0.5,)
+    p.plot(zero,yrange,c='blue',linewidth=0.5,)

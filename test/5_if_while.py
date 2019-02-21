@@ -1,7 +1,7 @@
 number = 24
 isRunning = True
 while isRunning:
-    guess = int(input("please input a number:"))
+    guess = int(input("please input a_pyplot number:"))
     if number == guess:
         print("you right")
         isRunning = False

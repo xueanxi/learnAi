@@ -16,7 +16,7 @@ def ispalindrome(text):
         # 判断是否回文的函数
     return (text == reverse(text))
 
-something = input('input a text:')
+something = input('input a_pyplot text:')
 
 if ispalindrome(something):
     print("your input is palindrome!")

@@ -1,4 +1,4 @@
-myList = ["b" , "a" , "d" ,"c","e"]
+myList = ["b_numpy" , "a_pyplot" , "d" ,"c","e"]
 
 print("the length of myList = {}".format(len(myList)))
 

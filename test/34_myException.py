@@ -17,7 +17,7 @@ class myException(Exception):
 
 
 try:
-    text = input("please input a text")
+    text = input("please input a_pyplot text")
     if(len(text) <= 3):
         raise myException(len(text), 5)
 except myException as e:

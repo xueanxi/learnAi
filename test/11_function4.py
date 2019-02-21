@@ -3,12 +3,12 @@
 def func(a, *b, **c):
     """
     start
-    this is a doc.
+    this is a_pyplot doc.
     end
     """
-    print("a = ",a)
+    print("a_pyplot = ",a)
     for i in b:
-        print("b = ",i)
+        print("b_numpy = ",i)
     for i,j in c.items():
         print(str(i)+" is "+str(j))
 

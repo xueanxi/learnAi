@@ -1,6 +1,6 @@
 isRunning = True
 while isRunning:
-    inputString = str(input("please input a string:"))
+    inputString = str(input("please input a_pyplot string:"))
     if inputString == "quit":
         break
     else:

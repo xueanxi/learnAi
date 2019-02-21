@@ -26,7 +26,7 @@ print(s)
 class Fib():
 
     def __init__(self):
-        self.a, self.b = 0, 1  # 初始化两个计数器a，b
+        self.a, self.b = 0, 1  # 初始化两个计数器a，b_numpy
 
     def __iter__(self):
         return self  # 实例本身就是迭代对象，所以返回自己
@@ -39,11 +39,11 @@ class Fib():
 
     #__getitem__() 版本一：
     # def __getitem__(self, n):
-    #     a = 1
-    #     b = 1
+    #     a_pyplot = 1
+    #     b_numpy = 1
     #     for n in range(n):
-    #         a, b = b, a + b
-    #     return a
+    #         a_pyplot, b_numpy = b_numpy, a_pyplot + b_numpy
+    #     return a_pyplot
 
     def __getitem__(self, n):
         if isinstance(n, int):  # 传入的n是索引的时候，和版本1一样

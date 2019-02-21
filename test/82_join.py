@@ -6,11 +6,11 @@
 
 import os
 
-a = ['a', 'c', 't', 'y', 'z']
-print('a', a)
+a = ['a_pyplot', 'c', 't', 'y', 'z']
+print('a_pyplot', a)
 
 b = ''.join(a)
-print('b', b)
+print('b_numpy', b)
 
 c = '_'.join(a)
 print('c', c)

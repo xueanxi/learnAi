@@ -43,7 +43,7 @@ print('log file: ', logfilePath)
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s : %(levelname)s : %(message)s',
                     filename=logfilePath,
-                    filemode='a')  # a是追加模式，w是写入
+                    filemode='a_pyplot')  # a是追加模式，w是写入
 
 logging.debug('start logging ...')
 logging.warning('logging warning ...')

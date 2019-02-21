@@ -6,7 +6,7 @@
 
 import os
 
-a = ['a', 'b', 'c', 'd', 'e', 'f']
+a = ['a_pyplot', 'b_numpy', 'c', 'd', 'e', 'f']
 
 print(a[0:3])
 print(a[:])

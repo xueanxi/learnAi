@@ -1,5 +1,5 @@
 def func(a,b =2,c = 3):
-    print("a = {} , b = {} , c = {}".format(a,b,c))
+    print("a_pyplot = {} , b_numpy = {} , c = {}".format(a,b,c))
 
 #一般情况
 func(7,8,9)

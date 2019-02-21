@@ -9,7 +9,7 @@ import os
 
 class person:
     """
-    I am a people
+    I am a_pyplot people
     """
 
     # 类变量,使用双下滑线，定义一个私有变量，外部不能访问
@@ -25,7 +25,7 @@ class person:
 
     def sayHi(self):
         """
-        i am a method
+        i am a_pyplot method
         """
         print("Hi I am ", self.name)
 

@@ -2,7 +2,7 @@
 # 特点1  是 都有 in 和 not in的操作
 # 特点2  都有切片功能，即可以通过下标访问
 
-sequence = ['a','b','c','d','e','f','g','h']
+sequence = ['a_pyplot','b_numpy','c','d','e','f','g','h']
 print("item 0 :",sequence[0])
 print("item 1 :",sequence[1])
 print("item 2 :",sequence[2])

@@ -8,10 +8,10 @@ import functools
 
 # 偏函数的作用，当参数多的时候，用偏函数可以固定住其中几个参数，让函数变得简单
 a = int('256')
-print('a = ', a)
+print('a_pyplot = ', a)
 
 b = int('101011', base=2)  # 加上base，就是二进制
-print('b = ', b)
+print('b_numpy = ', b)
 
 # 上面使用偏函数可以写成，定义一个偏函数 int2()自动执行二进制
 int2 = functools.partial(int, base=2)

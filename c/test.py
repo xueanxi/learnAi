@@ -45,8 +45,8 @@ import numpy as np
 # print('\\'.join(seg))
 
 d = dict()
-d['a'] = 'dog'
-del(d['a'])
+d['a_pyplot'] = 'dog'
+del(d['a_pyplot'])
 print(d)
 
 print('sss = ', np.multiply(7, 2, 4))
