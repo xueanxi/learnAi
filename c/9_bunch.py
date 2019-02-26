@@ -9,13 +9,11 @@
 import os
 import sys
 sys.path.append('..')
-import jieba
-import shutil
-from datautils import rootdatas, fileutils
+from datautils import fileutils
 from sklearn.datasets.base import Bunch
 import pickle
 
-rootPath = rootdatas.getDataPath() + os.sep
+rootPath = fileutils.getDataPath() + os.sep
 bagPath = rootPath + 'train_word_bag'
 bagFileName = 'train_set.dat'
 bagFile = bagPath + os.sep + bagFileName

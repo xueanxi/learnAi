@@ -9,11 +9,11 @@ import sys
 sys.path.append('..')
 import jieba
 import shutil
-from datautils import rootdatas, fileutils
+from datautils import fileutils
 
 # 把分词语料库的文件全部进行分词
 
-rootPath = rootdatas.getDataPath() + os.sep
+rootPath = fileutils.getDataPath() + os.sep
 corpus_raw = rootPath + 'train_corpus_small'
 corpus_seg = rootPath + 'train_corpus_seg'
 print('corpus_raw', corpus_raw)

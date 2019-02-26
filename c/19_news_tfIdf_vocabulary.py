@@ -17,10 +17,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 
 # 1.improt train_set.dat
+# train folder path:/rootdata/news/seg/news_train.dat
 rootPath = fileutils.getDataPath() + os.sep
-trainFolderPath = rootPath + 'train_word_bag'
-trainFilePath = trainFolderPath + os.sep + 'train_set.dat'
-trainBunch = fileutils.readBatchObj(trainFilePath)
+trainDataFile = rootPath + os.sep +'news'+os.sep+'seg'+os.sep+'news_train.dat'
+trainBunch = fileutils.readBatchObj(trainDataFile)
 
 # 2.get stop words
 stopWordFolderPath = rootPath + 'train_corpus_stop_word'
@@ -47,3 +47,5 @@ vocabularyFolderPath = rootPath + 'news' + os.sep + 'seg'
 vocabularyFileName = 'tfidfSpace.dat'
 vocabularyPath = vocabularyFolderPath + os.sep + vocabularyFileName
 fileutils.saveBatchObj(vocabularyPath, tfidfSpace)
+
+

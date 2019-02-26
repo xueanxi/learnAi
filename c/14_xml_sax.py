@@ -5,6 +5,8 @@
 # @Link    : ${link}
 # @Version : $Id$
 
+import time
+timeStart=time.clock()
 import os
 import sys
 sys.path.append('..')
@@ -48,20 +50,21 @@ class MyHandler(sax.ContentHandler):
         elif self.CurrentData == "content":
             self.content = content
 
-
+#rootdata/test/xml/file1.xml
 root = fileutils.getDataPath() + os.sep
-filePath = root + 'news' + os.sep + 'news.sohunews.020806.txt'
-#filePath = root + 'news' + os.sep + 'test.txt'
-
+filePath = root + 'test' + os.sep +'xml'+os.sep+ 'file1.xml'
 
 myHandler = MyHandler()
+# 方法1:直接解析.不过有非法字符的时候会出问题，
+#sax.parse(source=filePath, handler=myHandler)
 
-# 1
-# sax.parse(source=filePath, handler=myHandler)
-
-# 2
+# 方法2:先读出来,处理非法字符串，然后再解析。但是这样耗内存
 file = open(filePath, 'r')
 text = file.read()
 file.close()
 text = re.sub(u"[\x00-\x08\x0b-\x0c\x0e-\x1f|&]+", u"", text)
 root = sax.parseString(string=text, handler=myHandler)
+
+timeEnd=time.clock()
+print("Sax xml spend time:",(timeEnd - timeStart))
+
