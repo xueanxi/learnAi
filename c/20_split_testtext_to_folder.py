@@ -13,7 +13,7 @@ from sklearn.datasets.base import Bunch
 from xml import sax
 import re
 
-
+#把测试新闻集分类放入各自分类的文件夹中，每条新闻就是一个文件
 class MyHandler(sax.ContentHandler):
 
     def __init__(self):
