@@ -23,19 +23,16 @@ list2 = list(map(multip2, list1))
 print('map result = ', list2)
 
 # reduce（f,[x,y,z]） 传入两个参数，参数形式和map一致。
+# reduce把一个函数作用在一个序列[x1, x2, x3, ...]上，这个函数必须接收两个参数，
+# reduce把结果继续和序列的下一个元素做累积计算，其效果就是：
 # f(f(f(1,2),3),4)...
 list3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print('reduce result = ', reduce(add, list3))
 
-
 # 作业
 list5 = [1, 2, 3]
-
-
 def muti(number1, number2):
     return number1 * number2
-
-
 def prod(L):
     return reduce(muti, L)
 print('prod:', prod(list5))

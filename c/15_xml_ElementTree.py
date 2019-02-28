@@ -40,12 +40,12 @@ timeEnd=time.clock()
 print("ElementTree spend time:",(timeEnd - timeStart))
 
 # 遍历xml文档的第二层
-# for child in root:
-#     # 第二层节点的标签名称和属性
-#     # 遍历xml文档的第三层
-#     for children in child:
-#         # 第三层节点的标签名称和属性
-#         if children.tag == 'url':
-#             print(children.tag, children.text)
-#         elif children.tag == 'content':
-#             print(children.tag, children.text)
+for child in root:
+    # 第二层节点的标签名称和属性
+    # 遍历xml文档的第三层
+    for children in child:
+        # 第三层节点的标签名称和属性
+        if children.tag == 'url':
+            print(children.tag, children.text)
+        elif children.tag == 'content':
+            print(children.tag, children.text)

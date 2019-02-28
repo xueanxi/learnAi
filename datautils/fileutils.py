@@ -76,6 +76,8 @@ def readBatchObj(filePath):
 def encodeUtf8ForFolder(folderPath, encode="utf8"):
     for file in os.listdir(folderPath):
         filePath = folderPath + os.sep + file
+        if os.path.isdir(filePath):
+            continue
         with open(filePath, 'rb+') as file:
             print('start read file:', file)
             text = file.read()
@@ -96,8 +98,6 @@ def encodeUtf8ForFolder(folderPath, encode="utf8"):
             file.seek(0)
             file.write(text)
             print('finish :', file)
-
-    print('finish all!!!')
 
 def encodeUtf8(filePath, encode="utf8"):
     with open(filePath, 'rb+') as file:

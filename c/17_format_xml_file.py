@@ -19,4 +19,6 @@ for file in os.listdir(folderPath):
     with open(filePath, 'r+') as fp:
         content = fp.read()
         fp.seek(0, 0)
-        fp.write('<start>\n' + content + '\n</start>')
+        if not content.startswith('<start>'):
+            if not content.startswith('</start>'):
+                fp.write('<start>\n' + content + '\n</start>')

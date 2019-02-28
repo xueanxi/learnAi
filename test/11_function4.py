@@ -6,9 +6,9 @@ def func(a, *b, **c):
     this is a_pyplot doc.
     end
     """
-    print("a_pyplot = ",a)
+    print("a = ",a)
     for i in b:
-        print("b_numpy = ",i)
+        print("b = ",i)
     for i,j in c.items():
         print(str(i)+" is "+str(j))
 

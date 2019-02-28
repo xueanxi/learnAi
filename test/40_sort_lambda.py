@@ -8,6 +8,7 @@
 point1 = [{'x': 1, 'y': 4},
           {'x': 4, 'y': 2},
           {'x': 3, 'y': 7}]
+print('point1 type',type(point1))
 # 会报错
 #point1.sort(key=lambda i: i['y'])
 print('point1 after sort by y', point1)

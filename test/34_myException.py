@@ -17,8 +17,8 @@ class myException(Exception):
 
 
 try:
-    text = input("please input a_pyplot text")
-    if(len(text) <= 3):
+    text = input("please input a text")
+    if(len(text) <= 5):
         raise myException(len(text), 5)
 except myException as e:
     print("myException happen. your input len is {},at last {}".format(

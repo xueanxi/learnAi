@@ -38,12 +38,11 @@ else:
 logfilePath = os.path.join(currentFilePath, logFolderNme, logfileName)
 print('log file: ', logfilePath)
 
-
 # 配置log信息
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s : %(levelname)s : %(message)s',
                     filename=logfilePath,
-                    filemode='a_pyplot')  # a是追加模式，w是写入
+                    filemode='a')  # a是追加模式，w是写入
 
 logging.debug('start logging ...')
 logging.warning('logging warning ...')

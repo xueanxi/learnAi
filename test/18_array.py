@@ -1,8 +1,8 @@
-array1 = ("a_pyplot",)  # 声明一个元组 ，如果里面只有一个对象，需要加一个逗号
+array1 = ("a",)  # 声明一个元组 ，如果里面只有一个对象，需要加一个逗号
 
 print("len of array1 : ", len(array1))
 
-array2 = ("a_pyplot", "b_numpy", "c", "d")  # 声明元组的方法1
+array2 = ("a", "b", "c", "d")  # 声明元组的方法1
 print("len of array2 : ", len(array2))
 
 array3 = "e", "f"  # 声明元组的方法2

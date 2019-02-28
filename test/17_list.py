@@ -1,6 +1,6 @@
-myList = ["b_numpy" , "a_pyplot" , "d" ,"c","e"]
+myList = ["b" , "a" , "d" ,"c","e"]
 
-print("the length of myList = {}".format(len(myList)))
+print("1 the length of myList = {}".format(len(myList)))
 
 i = 0
 for item in myList:
@@ -8,15 +8,21 @@ for item in myList:
     i+=1
 
 myList.append("f")
-print("after append f, the list is ",myList)
+print("2 after append f, the list is ",myList)
 
 myList.sort()
-print("after sort list is",myList)
+print("3 after sort list is",myList)
 
-print("the first item is",myList[0])
+print("4 the first item is",myList[0])
 
 del myList[1]
-print("after del list:",myList)
+print("5 after del list:",myList)
+
+str1 = '<Start> jhfjajfd </Start>'
+if not str1.startswith('<Start>'):
+    print('6 str1 is not start with tag.')
+if not str1.endswith('</Start>'):
+    print('7 str1 is not end with tag.')
 
 
 

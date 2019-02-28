@@ -19,7 +19,7 @@ class MyObject():
         return self.yearold
 
     def setName(self, name):
-        self.name = name
+        self.__name = name
 
     def setYearold(self, yearold):
         self.yearold = yearold
@@ -31,8 +31,8 @@ print(dir(obj))  # 打印对象的所有方法
 # print(obj.__name)#不能直接访问私有方法
 print(obj.yearold)
 
-print(getattr(obj, 'yearold'))
-# print(getattr(obj, '__name'))#也不能使用反射获得私有方法
+print('getattr(obj, \'yearold\')=',getattr(obj, 'yearold'))
+#print(getattr(obj, '__name'))#也不能使用反射获得私有方法
 
 setattr(obj, 'yearold', 20)
 print(obj.getYearold())

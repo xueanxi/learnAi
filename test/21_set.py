@@ -1,13 +1,13 @@
-mySet = set(['a_pyplot','b_numpy','c','d'])
-mySet2 = set(['a_pyplot','b_numpy','d','e','f'])
+mySet = set(['a','b','c','d'])
+mySet2 = set(['a','b','d','e','f'])
 
 print("mySet :",mySet)
 print("mySet2 :",mySet2)
 
-if 'a_pyplot' in mySet:
-    print("a_pyplot in mySet")
+if 'a' in mySet:
+    print("a in mySet")
 else:
-    print("a_pyplot not in mySet")
+    print("a not in mySet")
 
 mySet.add('z')
 print("after add z ,mySet : ",mySet)
@@ -23,3 +23,7 @@ print("mySet & mySet2 = ",mySet4)
 mySet5 = mySet | mySet2
 print("mySet | mySet2 = ",mySet5)
 
+list1 = [1,2,3,4,5]
+print('list1',list1)
+mySet6 = set(list1)
+print('mySet6',mySet6)
