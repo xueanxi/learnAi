@@ -22,4 +22,6 @@ print('2.reuslt',list(newlist))
 #3.使用匿名函数lambda
 list1 = [1,2,3,4,5,6]      
 newlist2 = map(lambda x:x+1,list1)
-print('3.reuslt',list(newlist2))   
+print('3.reuslt',list(newlist2))
+
+

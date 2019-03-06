@@ -23,7 +23,7 @@ print("mySet & mySet2 = ",mySet4)
 mySet5 = mySet | mySet2
 print("mySet | mySet2 = ",mySet5)
 
-list1 = [1,2,3,4,5]
-print('list1',list1)
+# 这样初始化会去掉列表中的重复值，但是顺序会发生改变
+list1 = [2,1,2,3,4,5,4,5,5,5]
 mySet6 = set(list1)
 print('mySet6',mySet6)
